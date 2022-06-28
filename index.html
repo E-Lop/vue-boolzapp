@@ -75,6 +75,7 @@
                 v-for="(element, index) in contacts"
                 class="contact_info"
                 @click="showThisConversation(index)"
+                :class="{active_contact: activeContact === index}"
               >
                 <div>
                   <img

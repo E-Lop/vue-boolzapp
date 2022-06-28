@@ -97,7 +97,7 @@ var app = new Vue({
   methods: {
     showThisConversation(index) {
       activeContact = index;
-      console.log('index', index);
+      console.log('activeContact', activeContact);
     },
   },
 });
