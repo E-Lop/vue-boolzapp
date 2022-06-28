@@ -1,0 +1,42 @@
+/*** RESET ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  padding: 40px 0;
+  /* todo */
+  background-color: aqua;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  /* todo test */
+  background-color: salmon;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.col_sx {
+  width: 40%;
+}
+.col_dx {
+  width: 60%;
+}
+
+.heading {
+  height: 100px;
+  /* todo test */
+  border: 1px solid black;
+}
