@@ -9,7 +9,7 @@ img {
   display: block;
 }
 
-/* COMMON */
+/*** COMMON ***/
 
 body {
   padding: 40px 0;
@@ -18,6 +18,7 @@ body {
   background-color: aqua;
 }
 
+/*** WEBAPPP GENERAL ***/
 .container {
   width: 80%;
   margin: 0 auto;
@@ -53,20 +54,69 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  font-size: 1.5rem;
+  background-color: #eaeaea;
   /* todo test */
   border: 1px solid black;
 }
+.user_info {
+  display: flex;
+  align-items: center;
+}
+.user_info img {
+  display: inline-block;
+}
+.round_icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  margin-right: 10px;
+}
+
 .ui_icons i {
   padding: 10px;
+  color: #b1b1b1;
 }
 
 .notifications {
+  display: flex;
+  align-items: center;
+  padding: 10px;
   height: 100px;
+  background-color: #8edafb;
+}
+.notifications i {
+  color: #8edafb;
+  line-height: 80px;
+  font-size: 2rem;
+}
+#notify_new {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#desktop_notify {
+  text-decoration: underline;
+  color: #6ca2ba;
 }
 .filter {
-  height: 80px;
+  width: 100%;
+  padding: 4px 0;
+  text-align: center;
+  background-color: #fafafa;
+}
+.filter input {
+  width: 98%;
+  font-size: 1.5rem;
 }
 .contacts {
   overflow-y: auto;
   flex-grow: 1;
+}
+.contact_info {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 1.5rem;
 }
