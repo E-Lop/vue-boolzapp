@@ -46,7 +46,7 @@ body {
 .col_dx .heading {
   border: 1px solid #f3eeea;
 }
-
+/* classe condivisa per heading di entrambe le colonne */
 .heading {
   height: 100px;
   width: 100%;
@@ -150,7 +150,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f3eeea;
-  overflow: hidden;
+  overflow: auto;
 }
 .new_message_area i {
   margin: 0 30px;
