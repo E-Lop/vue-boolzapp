@@ -9,8 +9,11 @@ img {
   display: block;
 }
 
+/* COMMON */
+
 body {
   padding: 40px 0;
+  font-family: 'Montserrat', sans-serif;
   /* todo */
   background-color: aqua;
 }
@@ -49,8 +52,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
   /* todo test */
   border: 1px solid black;
+}
+.ui_icons i {
+  padding: 10px;
 }
 
 .notifications {
