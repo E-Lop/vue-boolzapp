@@ -23,6 +23,7 @@ body {
   width: 80%;
   margin: 0 auto;
   height: 100vh;
+  min-width: 950px;
 }
 
 .row {
