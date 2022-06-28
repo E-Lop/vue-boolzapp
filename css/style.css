@@ -167,6 +167,7 @@ body {
   padding: 5px;
   background-color: #fff;
   max-width: 50%;
+  min-width: 300px;
   border-radius: 15px;
 }
 
@@ -175,9 +176,12 @@ body {
   padding: 5px;
   background-color: #d5f9ba;
   max-width: 50%;
+  min-width: 300px;
   align-self: flex-end;
   border-radius: 15px;
 }
 .msg_time_align {
-  text-align: end;
+  text-align: right;
+  font-size: 0.8rem;
+  color: gray;
 }
