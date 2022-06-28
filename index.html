@@ -64,16 +64,17 @@
             </div>
             <div class="contacts">
               <!-- template per contatti -->
-              <div class="contact_info">
+              <div v-for="(element, index) in contacts" class="contact_info">
                 <div>
                   <img
                     class="round_icon"
-                    src="img/avatar_io.jpg"
-                    alt="Immagine utente"
+                    :src="'./img/avatar' + element.avatar + '.jpg'"
+                    alt="element.name"
                   />
                 </div>
-                <div class="contact_name">Nome utente</div>
+                <div class="contact_name">{{element.name}}</div>
               </div>
+              <!-- fine template contatti -->
             </div>
           </div>
           <!-- colonna a destra della webapp -->
