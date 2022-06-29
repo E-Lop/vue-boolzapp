@@ -1,0 +1,213 @@
+/*** RESET ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+/*** COMMON ***/
+
+body {
+  padding: 40px 0;
+  font-family: 'Montserrat', sans-serif;
+  /* todo */
+  background-color: aqua;
+}
+/* classe condivisa per heading di entrambe le colonne */
+.heading {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  background-color: #eaeaea;
+}
+.user_name {
+  font-weight: 600;
+}
+.user_info {
+  display: flex;
+  align-items: center;
+}
+.user_info img {
+  display: inline-block;
+}
+.round_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+
+  margin-right: 10px;
+}
+.round_icon.big {
+  width: 80px;
+  height: 80px;
+}
+
+.ui_icons i {
+  padding: 10px;
+  color: #b1b1b1;
+}
+
+/*** WEBAPPP GENERAL ***/
+#root {
+  height: 100vh;
+  min-width: 950px;
+}
+
+.container {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.col_sx {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.col_dx {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.col_dx .heading {
+  border: 1px solid #f3eeea;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 100px;
+  background-color: #8edafb;
+}
+.notifications i {
+  color: #8edafb;
+  line-height: 60px;
+  font-size: 2rem;
+}
+#notify_new {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#desktop_notify {
+  text-decoration: underline;
+  color: #6ca2ba;
+}
+.filter {
+  width: 100%;
+  padding: 4px 0;
+  text-align: center;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #6a7376;
+}
+.filter input {
+  width: 90%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.contacts {
+  overflow-y: auto;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+.contact_info {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e9ebea;
+}
+
+.active_contact {
+  background-color: #e9ebea;
+}
+/*** COLONNA DESTRA ***/
+#current_last_access {
+  font-size: 0.8rem;
+}
+.messages_window {
+  flex-grow: 1;
+  background-image: url(../img/mine.jpg);
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+}
+.msg_bubbles {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.new_message_area {
+  width: 100%;
+  height: 80px;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3eeea;
+  overflow: hidden;
+}
+.new_message_area i {
+  margin: 0 30px;
+  color: #6a7376;
+}
+.new_message_area input {
+  font-size: 1.5rem;
+  flex-grow: 1;
+  padding: 8px;
+}
+
+/*** formattazione messaggi ***/
+.received {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #fff;
+  max-width: 55%;
+  min-width: 300px;
+  border-radius: 15px;
+}
+
+.sent {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #d5f9ba;
+  max-width: 50%;
+  min-width: 300px;
+  align-self: flex-end;
+  border-radius: 15px;
+}
+.msg_time_align {
+  text-align: right;
+  font-size: 0.8rem;
+  color: gray;
+}
