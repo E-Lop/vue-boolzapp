@@ -16,6 +16,7 @@ var app = new Vue({
   data: {
     activeContact: '0',
     userFilterText: '',
+    userNewMessage: '',
     contacts: [
       {
         name: 'Michele',
@@ -105,6 +106,28 @@ var app = new Vue({
   methods: {
     showThisConversation(index) {
       this.activeContact = index;
+    },
+    // aggiunge un messaggio dell'utente alla conversazione del contatto attivo e svuota il campo testo
+    addNewMessage() {
+      currentDayAndTime = dayjs().format('DD/MM/YYYY hh:mm:ss');
+      thisMessageFlow = this.contacts[this.activeContact];
+      thisMessageFlow.messages.push({
+        date: currentDayAndTime,
+        text: this.userNewMessage,
+        status: 'sent',
+      });
+      this.userNewMessage = '';
+      // dopo un secondo risposta automatica con 'ok'
+      setTimeout(automaticReply, 1000);
+      function automaticReply() {
+        newDateAndTime = dayjs().format('DD/MM/YYYY hh:mm:ss');
+        thisMessageFlow.messages.push({
+          date: newDateAndTime,
+          text: 'ok',
+          status: 'received',
+        });
+        console.log('ciao', 'ciao');
+      }
     },
   },
 });
