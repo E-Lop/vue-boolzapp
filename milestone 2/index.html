@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
     <title>Boolzapp</title>
@@ -82,12 +82,12 @@
               >
                 <div>
                   <img
-                    class="round_icon"
+                    class="round_icon big"
                     :src="'./img/avatar' + element.avatar + '.jpg'"
                     :alt="element.name"
                   />
                 </div>
-                <div class="contact_name">{{element.name}}</div>
+                <div class="user_name">{{element.name}}</div>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div>
                   <div class="user_name">{{contacts[activeContact].name}}</div>
-                  <div>Ultimo accesso oggi alle</div>
+                  <div id="current_last_access">Ultimo accesso oggi alle</div>
                 </div>
               </div>
               <div class="ui_icons">

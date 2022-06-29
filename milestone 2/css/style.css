@@ -28,6 +28,34 @@ body {
   font-size: 1.5rem;
   background-color: #eaeaea;
 }
+.user_name {
+  font-weight: 600;
+}
+.user_info {
+  display: flex;
+  align-items: center;
+}
+.user_info img {
+  display: inline-block;
+}
+.round_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+
+  margin-right: 10px;
+}
+.round_icon.big {
+  width: 80px;
+  height: 80px;
+}
+
+.ui_icons i {
+  padding: 10px;
+  color: #b1b1b1;
+}
 
 /*** WEBAPPP GENERAL ***/
 #root {
@@ -63,27 +91,6 @@ body {
   border: 1px solid #f3eeea;
 }
 
-.user_info {
-  display: flex;
-  align-items: center;
-}
-.user_info img {
-  display: inline-block;
-}
-.round_icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: white;
-  text-align: center;
-  margin-right: 10px;
-}
-
-.ui_icons i {
-  padding: 10px;
-  color: #b1b1b1;
-}
-
 .notifications {
   display: flex;
   align-items: center;
@@ -93,7 +100,7 @@ body {
 }
 .notifications i {
   color: #8edafb;
-  line-height: 80px;
+  line-height: 60px;
   font-size: 2rem;
 }
 #notify_new {
@@ -116,6 +123,7 @@ body {
 .filter i {
   font-size: 1.5rem;
   margin-right: 10px;
+  color: #6a7376;
 }
 .filter input {
   width: 90%;
@@ -132,12 +140,16 @@ body {
   align-items: flex-start;
   padding: 10px;
   font-size: 1.5rem;
+  border-bottom: 1px solid #e9ebea;
 }
 
 .active_contact {
   background-color: #e9ebea;
 }
-
+/*** COLONNA DESTRA ***/
+#current_last_access {
+  font-size: 0.8rem;
+}
 .messages_window {
   flex-grow: 1;
   background-image: url(../img/mine.jpg);
@@ -147,12 +159,12 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  overflow-y: auto;
 }
 .msg_bubbles {
   width: 90%;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 .new_message_area {
   width: 100%;
@@ -163,10 +175,11 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f3eeea;
-  overflow: auto;
+  overflow: hidden;
 }
 .new_message_area i {
   margin: 0 30px;
+  color: #6a7376;
 }
 .new_message_area input {
   font-size: 1.5rem;
