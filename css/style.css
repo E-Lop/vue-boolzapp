@@ -17,13 +17,28 @@ body {
   /* todo */
   background-color: aqua;
 }
+/* classe condivisa per heading di entrambe le colonne */
+.heading {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  background-color: #eaeaea;
+}
 
 /*** WEBAPPP GENERAL ***/
-.container {
-  width: 80%;
-  margin: 0 auto;
+#root {
   height: 100vh;
   min-width: 950px;
+}
+
+.container {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
 }
 
 .row {
@@ -47,17 +62,7 @@ body {
 .col_dx .heading {
   border: 1px solid #f3eeea;
 }
-/* classe condivisa per heading di entrambe le colonne */
-.heading {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  font-size: 1.5rem;
-  background-color: #eaeaea;
-}
+
 .user_info {
   display: flex;
   align-items: center;
