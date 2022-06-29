@@ -69,6 +69,7 @@
                 type="search"
                 placeholder="Cerca o inizia una nuova chat"
                 v-model="userFilterText"
+                @keyup="filterContactsByText()"
               />
             </div>
 
@@ -77,6 +78,7 @@
               <!-- per ciascun contatto tra i contacts stampa un contatto -->
               <div
                 v-for="(element, index) in contacts"
+                v-if="element.visible"
                 class="contact_info"
                 @click="showThisConversation(index)"
                 :class="{active_contact: activeContact === index}"

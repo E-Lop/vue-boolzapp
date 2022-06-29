@@ -133,5 +133,18 @@ var app = new Vue({
         console.log('ciao', 'ciao');
       }
     },
+    filterContactsByText() {
+      // rendo lowercase il testo inserito dall'utente
+      const userInputLowerCase = this.userFilterText.toLowerCase();
+      this.contacts.forEach((element) => {
+        // rendo lowercase il nome del contatto
+        const contactNameLowerCase = element.name.toLowerCase();
+        if (contactNameLowerCase.includes(userInputLowerCase)) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
+      });
+    },
   },
 });
