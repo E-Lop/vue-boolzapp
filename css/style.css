@@ -109,9 +109,16 @@ body {
   padding: 4px 0;
   text-align: center;
   background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter i {
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 .filter input {
-  width: 98%;
+  width: 90%;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -172,7 +179,7 @@ body {
   margin: 10px 0;
   padding: 5px;
   background-color: #fff;
-  max-width: 50%;
+  max-width: 55%;
   min-width: 300px;
   border-radius: 15px;
 }

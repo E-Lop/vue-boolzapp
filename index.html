@@ -55,12 +55,15 @@
               </div>
               <div class="notification_texts">
                 <p id="notify_new">Ricevi notifiche di nuovi messaggi</p>
-                <p id="desktop_notify">Attiva notifiche desktop</p>
+                <a href="#" id="desktop_notify">Attiva notifiche desktop</a>
               </div>
             </div>
 
             <!-- sezione filtro per contatti -->
             <div class="filter">
+              <label for="contacts-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </label>
               <input
                 type="search"
                 placeholder="Cerca o inizia una nuova chat"
@@ -81,7 +84,7 @@
                   <img
                     class="round_icon"
                     :src="'./img/avatar' + element.avatar + '.jpg'"
-                    alt="Immagine contatto"
+                    :alt="element.name"
                   />
                 </div>
                 <div class="contact_name">{{element.name}}</div>
@@ -97,10 +100,13 @@
                   <img
                     class="round_icon"
                     :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'"
-                    alt="Immagine contatto"
+                    :alt="contacts[activeContact].name"
                   />
                 </div>
-                <div class="user_name">{{contacts[activeContact].name}}</div>
+                <div>
+                  <div class="user_name">{{contacts[activeContact].name}}</div>
+                  <div>Ultimo accesso oggi alle</div>
+                </div>
               </div>
               <div class="ui_icons">
                 <i class="fa-solid fa-magnifying-glass"></i>
