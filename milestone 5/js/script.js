@@ -25,7 +25,7 @@ var app = new Vue({
     activeContact: '0',
     userFilterText: '',
     userNewMessage: '',
-    activeMessage: '',
+    activeMessage: null,
     chevronIsVisible: false,
     menuIsVisible: false,
     contacts: [
@@ -117,7 +117,7 @@ var app = new Vue({
   methods: {
     showThisConversation(index) {
       this.activeContact = index;
-      this.activeMessage = '';
+      this.activeMessage = null;
     },
     // aggiunge un messaggio dell'utente alla conversazione del contatto attivo e svuota il campo testo
     addNewMessage() {
@@ -166,7 +166,7 @@ var app = new Vue({
     deleteMessage(index) {
       this.contacts[this.activeContact].messages.splice(index, 1);
       this.menuIsVisible = false;
-      this.activeMessage = '';
+      this.activeMessage = null;
     },
   },
 });
