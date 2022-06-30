@@ -120,26 +120,31 @@ var app = new Vue({
       this.activeContact = index;
       this.activeMessage = null;
     },
-    // aggiunge un messaggio dell'utente alla conversazione del contatto attivo e svuota il campo testo
+    // aggiunge un messaggio dell'utente alla conversazione del contatto attivo
+    //  e svuota il campo testo
+    // se il messaggio non è vuoto
     addNewMessage() {
       currentDayAndTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
+      const userTrimmedMessage = this.userNewMessage.trim();
       thisMessageFlow = this.contacts[this.activeContact];
-      thisMessageFlow.messages.push({
-        date: currentDayAndTime,
-        text: this.userNewMessage,
-        status: 'sent',
-      });
-      // svuotamento campo input messaggio
-      this.userNewMessage = '';
-      // dopo un secondo risposta automatica con 'ok'
-      setTimeout(automaticReply, 1000);
-      function automaticReply() {
-        newDateAndTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
+      if (userTrimmedMessage.length > 0) {
         thisMessageFlow.messages.push({
-          date: newDateAndTime,
-          text: 'ok',
-          status: 'received',
+          date: currentDayAndTime,
+          text: userTrimmedMessage,
+          status: 'sent',
         });
+        // svuotamento campo input messaggio
+        this.userNewMessage = '';
+        // dopo un secondo risposta automatica con 'ok'
+        setTimeout(automaticReply, 1000);
+        function automaticReply() {
+          newDateAndTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
+          thisMessageFlow.messages.push({
+            date: newDateAndTime,
+            text: 'ok',
+            status: 'received',
+          });
+        }
       }
     },
     // filtra i contatti in base al testo inserito dall'utente
