@@ -195,6 +195,7 @@ body {
   max-width: 55%;
   min-width: 300px;
   border-radius: 15px;
+  position: relative;
 }
 
 .sent {
@@ -205,9 +206,28 @@ body {
   min-width: 300px;
   align-self: flex-end;
   border-radius: 15px;
+  position: relative;
 }
 .msg_time_align {
   text-align: right;
   font-size: 0.8rem;
   color: gray;
+}
+.chev_icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.dropdown_menu {
+  position: absolute;
+  right: 5px;
+  top: 17px;
+  z-index: 10;
+}
+.dropdown_menu div {
+  text-align: center;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: white;
 }

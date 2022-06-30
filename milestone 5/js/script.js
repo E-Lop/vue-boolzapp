@@ -25,6 +25,9 @@ var app = new Vue({
     activeContact: '0',
     userFilterText: '',
     userNewMessage: '',
+    activeMessage: '0',
+    chevronIsVisible: false,
+    menuIsVisible: false,
     contacts: [
       {
         name: 'Michele',
@@ -117,18 +120,19 @@ var app = new Vue({
     },
     // aggiunge un messaggio dell'utente alla conversazione del contatto attivo e svuota il campo testo
     addNewMessage() {
-      currentDayAndTime = dayjs().format('DD/MM/YYYY hh:mm:ss');
+      currentDayAndTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
       thisMessageFlow = this.contacts[this.activeContact];
       thisMessageFlow.messages.push({
         date: currentDayAndTime,
         text: this.userNewMessage,
         status: 'sent',
       });
+      // svuotamento campo input messaggio
       this.userNewMessage = '';
       // dopo un secondo risposta automatica con 'ok'
       setTimeout(automaticReply, 1000);
       function automaticReply() {
-        newDateAndTime = dayjs().format('DD/MM/YYYY hh:mm:ss');
+        newDateAndTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
         thisMessageFlow.messages.push({
           date: newDateAndTime,
           text: 'ok',
@@ -149,6 +153,20 @@ var app = new Vue({
           element.visible = false;
         }
       });
+    },
+    // toggle che rende visibile la chevron down
+    showMenu(element, index) {
+      this.activeMessage = index;
+      const testami = element[this.activeMessage];
+      console.log('testami', testami);
+      this.chevronIsVisible = !this.chevronIsVisible;
+    },
+    // toggle che rende visibile il menu a tendina
+    summonMenu() {
+      this.menuIsVisible = !this.menuIsVisible;
+    },
+    deleteMessage(element, index) {
+      console.log('element', element);
     },
   },
 });

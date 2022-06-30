@@ -122,14 +122,29 @@
             <div class="messages_window">
               <div class="msg_bubbles">
                 <div
-                  v-for="element in contacts[activeContact].messages"
+                  v-for="element, index in contacts[activeContact].messages"
                   :class="element.status"
+                  @click="showMenu(element, index)"
                 >
                   <div>{{element.text}}</div>
                   <div class="msg_time_align">{{element.date}}</div>
+
+                  <span v-show="chevronIsVisible"
+                    ><i
+                      @click="summonMenu()"
+                      class="fa-solid fa-chevron-down chev_icon"
+                    ></i
+                  ></span>
+                  <div class="dropdown_menu" v-show="menuIsVisible">
+                    <div>Message info</div>
+                    <div @click="deleteMessage(element, index)">
+                      Delete message
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- sezione input nuovo messaggio -->
             <div class="new_message_area">
               <span><i class="fa-regular fa-face-smile"></i></span>
               <input
