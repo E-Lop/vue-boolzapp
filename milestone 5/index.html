@@ -92,11 +92,13 @@
                 </div>
                 <div class="contact_texts">
                   <div class="user_name">{{element.name}}</div>
-                  <div class="latest_message">
-                    {{element.messages[element.messages.length -1].text}}
-                  </div>
-                  <div class="latest_access">
-                    {{element.messages[element.messages.length -1].date}}
+                  <div v-if="element.messages.length > 0">
+                    <div class="latest_message">
+                      {{element.messages[element.messages.length -1].text}}
+                    </div>
+                    <div class="latest_access">
+                      {{element.messages[element.messages.length -1].date}}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -118,8 +120,10 @@
                   <div class="user_name">{{contacts[activeContact].name}}</div>
                   <div id="current_last_access">
                     Ultimo accesso
-                    {{contacts[activeContact].messages[contacts[activeContact].messages.length
-                    -1].date}}
+                    <span v-if="contacts[activeContact].messages.length > 0"
+                      >{{contacts[activeContact].messages[contacts[activeContact].messages.length
+                      -1].date}}</span
+                    >
                   </div>
                 </div>
               </div>
