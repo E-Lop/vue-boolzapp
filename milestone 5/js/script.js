@@ -25,7 +25,7 @@ var app = new Vue({
     activeContact: '0',
     userFilterText: '',
     userNewMessage: '',
-    activeMessage: '0',
+    activeMessage: '',
     chevronIsVisible: false,
     menuIsVisible: false,
     contacts: [
@@ -117,6 +117,7 @@ var app = new Vue({
   methods: {
     showThisConversation(index) {
       this.activeContact = index;
+      this.activeMessage = '';
     },
     // aggiunge un messaggio dell'utente alla conversazione del contatto attivo e svuota il campo testo
     addNewMessage() {
@@ -138,7 +139,6 @@ var app = new Vue({
           text: 'ok',
           status: 'received',
         });
-        console.log('ciao', 'ciao');
       }
     },
     filterContactsByText() {
@@ -154,17 +154,19 @@ var app = new Vue({
         }
       });
     },
-    // toggle che rende visibile la chevron down
-    showMenu(element, index) {
+    // rende il messaggio attivo e la sua chevron down visibile
+    showMenu(index) {
       this.activeMessage = index;
     },
     // toggle che rende visibile il menu a tendina
     summonMenu() {
       this.menuIsVisible = !this.menuIsVisible;
     },
+    // cancella il messaggio attivo e fa scomparire il menu a tendina
     deleteMessage(index) {
       this.contacts[this.activeContact].messages.splice(index, 1);
-      console.log('contatto attivo', this.activeContact);
+      this.menuIsVisible = false;
+      this.activeMessage = '';
     },
   },
 });

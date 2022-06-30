@@ -136,7 +136,7 @@
                 <div
                   v-for="element, index in contacts[activeContact].messages"
                   :class="element.status"
-                  @click="showMenu(element, index)"
+                  @click="showMenu(index)"
                 >
                   <div>{{element.text}}</div>
                   <div class="msg_time_align">{{element.date}}</div>
