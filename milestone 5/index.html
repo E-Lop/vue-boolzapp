@@ -158,9 +158,7 @@
                     v-show="menuIsVisible"
                   >
                     <div>Message info</div>
-                    <div @click.prevent="deleteMessage(index)">
-                      Delete message
-                    </div>
+                    <div @click.stop="deleteMessage(index)">Delete message</div>
                   </div>
                 </div>
               </div>

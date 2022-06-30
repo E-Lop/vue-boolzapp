@@ -59,10 +59,13 @@ body {
 .latest_message {
   font-size: 0.8rem;
   margin-top: 10px;
+  width: 100px;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .latest_access {
-  font-size: 0.8rem;
+  font-size: 1rem;
   position: absolute;
   top: 12px;
   right: 12px;
