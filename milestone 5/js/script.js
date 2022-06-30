@@ -115,6 +115,7 @@ var app = new Vue({
     ],
   },
   methods: {
+    // indica quale contatto è attivo, resetta il messaggio attivo
     showThisConversation(index) {
       this.activeContact = index;
       this.activeMessage = null;
@@ -141,6 +142,7 @@ var app = new Vue({
         });
       }
     },
+    // filtra i contatti in base al testo inserito dall'utente
     filterContactsByText() {
       // rendo lowercase il testo inserito dall'utente
       const userInputLowerCase = this.userFilterText.toLowerCase();
@@ -162,7 +164,7 @@ var app = new Vue({
     summonMenu() {
       this.menuIsVisible = !this.menuIsVisible;
     },
-    // cancella il messaggio attivo e fa scomparire il menu a tendina
+    // cancella il messaggio attivo, fa scomparire il menu a tendina e resetta messaggio attivo
     deleteMessage(index) {
       this.contacts[this.activeContact].messages.splice(index, 1);
       this.menuIsVisible = false;

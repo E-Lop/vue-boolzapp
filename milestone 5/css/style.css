@@ -14,8 +14,6 @@ img {
 body {
   padding: 40px 0;
   font-family: 'Montserrat', sans-serif;
-  /* todo */
-  background-color: aqua;
 }
 /* classe condivisa per heading di entrambe le colonne */
 .heading {
@@ -28,6 +26,7 @@ body {
   font-size: 1.5rem;
   background-color: #eaeaea;
 }
+/* rende i nomi del contatti e dell'utente bold */
 .user_name {
   font-weight: 600;
 }
@@ -56,6 +55,7 @@ body {
   padding: 10px;
   color: #b1b1b1;
 }
+/* gestisce il messaggio più recente di ogni contatto */
 .latest_message {
   font-size: 0.8rem;
   margin-top: 10px;
@@ -64,6 +64,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+/* gestisce data e ora di accesso più recente */
 .latest_access {
   font-size: 1rem;
   position: absolute;
@@ -104,7 +105,7 @@ body {
 .col_dx .heading {
   border: 1px solid #f3eeea;
 }
-
+/* SEZIONE NOTIFICHE */
 .notifications {
   display: flex;
   align-items: center;
@@ -125,6 +126,7 @@ body {
   text-decoration: underline;
   color: #6ca2ba;
 }
+/* SEZIONE FILTRO PER CONTATTI */
 .filter {
   width: 100%;
   padding: 4px 0;
@@ -144,6 +146,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
 }
+/* SEZIONE CONTATTI */
 .contacts {
   overflow-y: auto;
   flex-grow: 1;
@@ -168,6 +171,7 @@ body {
 #current_last_access {
   font-size: 0.8rem;
 }
+/* SEZIONE MESSAGGI */
 .messages_window {
   flex-grow: 1;
   background-image: url(../img/mine.jpg);
@@ -184,6 +188,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* SEZIONE NUOVO MESSAGGIO */
 .new_message_area {
   width: 100%;
   height: 80px;
@@ -231,6 +236,7 @@ body {
   font-size: 0.8rem;
   color: gray;
 }
+/* sezione menu dei singoli messaggi */
 .chev_icon {
   position: absolute;
   top: 0;

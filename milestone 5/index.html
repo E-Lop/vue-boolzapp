@@ -84,14 +84,17 @@
                 :class="{active_contact: activeContact === index}"
               >
                 <div>
+                  <!-- immagine del contatto -->
                   <img
                     class="round_icon big"
                     :src="'./img/avatar' + element.avatar + '.jpg'"
                     :alt="element.name"
                   />
                 </div>
+                <!-- testi relativi al contatto -->
                 <div class="contact_texts">
                   <div class="user_name">{{element.name}}</div>
+                  <!-- data e contenuto ultimo messaggio del contatto, se ci sono messaggi -->
                   <div v-if="element.messages.length > 0">
                     <div class="latest_message">
                       {{element.messages[element.messages.length -1].text}}
@@ -110,6 +113,7 @@
             <div class="heading">
               <div class="user_info">
                 <div>
+                  <!-- immagine del contatto attivo -->
                   <img
                     class="round_icon"
                     :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'"
@@ -117,9 +121,11 @@
                   />
                 </div>
                 <div>
+                  <!-- nome del contatto attivo -->
                   <div class="user_name">{{contacts[activeContact].name}}</div>
                   <div id="current_last_access">
                     Ultimo accesso
+                    <!-- informazioni su orario ultimo contatto, se ci sono messaggi -->
                     <span v-if="contacts[activeContact].messages.length > 0"
                       >{{contacts[activeContact].messages[contacts[activeContact].messages.length
                       -1].date}}</span
@@ -137,6 +143,7 @@
             <!-- sezione con le conversazioni -->
             <div class="messages_window">
               <div class="msg_bubbles">
+                <!-- stampa i messaggi del contatto attivo  -->
                 <div
                   v-for="element, index in contacts[activeContact].messages"
                   :class="element.status"
@@ -144,9 +151,10 @@
                 >
                   <div>{{element.text}}</div>
                   <div class="msg_time_align">{{element.date}}</div>
-
-                  <span
-                    ><i
+                  <!-- al click mostra la chevron di quel messaggio -->
+                  <span>
+                    <!-- al click sulla chevron mostra il menu -->
+                    <i
                       @click="summonMenu()"
                       v-if="activeMessage === index"
                       class="fa-solid fa-chevron-down chev_icon"
@@ -157,6 +165,7 @@
                     class="dropdown_menu"
                     v-show="menuIsVisible"
                   >
+                    <!-- al click cancella il messaggio -->
                     <div>Message info</div>
                     <div @click.stop="deleteMessage(index)">Delete message</div>
                   </div>
