@@ -129,13 +129,18 @@
                   <div>{{element.text}}</div>
                   <div class="msg_time_align">{{element.date}}</div>
 
-                  <span v-show="chevronIsVisible"
+                  <span
                     ><i
                       @click="summonMenu()"
+                      v-if="activeMessage === index"
                       class="fa-solid fa-chevron-down chev_icon"
                     ></i
                   ></span>
-                  <div class="dropdown_menu" v-show="menuIsVisible">
+                  <div
+                    v-if="activeMessage === index"
+                    class="dropdown_menu"
+                    v-show="menuIsVisible"
+                  >
                     <div>Message info</div>
                     <div @click="deleteMessage(element, index)">
                       Delete message
