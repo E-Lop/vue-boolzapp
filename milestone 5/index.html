@@ -90,7 +90,15 @@
                     :alt="element.name"
                   />
                 </div>
-                <div class="user_name">{{element.name}}</div>
+                <div class="contact_texts">
+                  <div class="user_name">{{element.name}}</div>
+                  <div class="latest_message">
+                    {{element.messages[element.messages.length -1].text}}
+                  </div>
+                  <div class="latest_access">
+                    {{element.messages[element.messages.length -1].date}}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -108,7 +116,11 @@
                 </div>
                 <div>
                   <div class="user_name">{{contacts[activeContact].name}}</div>
-                  <div id="current_last_access">Ultimo accesso oggi alle</div>
+                  <div id="current_last_access">
+                    Ultimo accesso
+                    {{contacts[activeContact].messages[contacts[activeContact].messages.length
+                    -1].date}}
+                  </div>
                 </div>
               </div>
               <div class="ui_icons">
@@ -142,9 +154,7 @@
                     v-show="menuIsVisible"
                   >
                     <div>Message info</div>
-                    <div @click="deleteMessage(element, index)">
-                      Delete message
-                    </div>
+                    <div @click="deleteMessage(index)">Delete message</div>
                   </div>
                 </div>
               </div>

@@ -56,6 +56,17 @@ body {
   padding: 10px;
   color: #b1b1b1;
 }
+.latest_message {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  text-overflow: ellipsis;
+}
+.latest_access {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
 
 /*** WEBAPPP GENERAL ***/
 #root {
@@ -141,8 +152,12 @@ body {
   padding: 10px;
   font-size: 1.5rem;
   border-bottom: 1px solid #e9ebea;
+  position: relative;
 }
-
+.contact_texts {
+  display: flex;
+  flex-direction: column;
+}
 .active_contact {
   background-color: #e9ebea;
 }

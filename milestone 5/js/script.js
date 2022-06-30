@@ -157,16 +157,14 @@ var app = new Vue({
     // toggle che rende visibile la chevron down
     showMenu(element, index) {
       this.activeMessage = index;
-      const testami = element[this.activeMessage];
-      console.log('testami', testami);
-      this.chevronIsVisible = !this.chevronIsVisible;
     },
     // toggle che rende visibile il menu a tendina
     summonMenu() {
       this.menuIsVisible = !this.menuIsVisible;
     },
-    deleteMessage(element, index) {
-      console.log('element', element);
+    deleteMessage(index) {
+      this.contacts[this.activeContact].messages.splice(index, 1);
+      console.log('contatto attivo', this.activeContact);
     },
   },
 });
